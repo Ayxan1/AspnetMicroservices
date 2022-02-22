@@ -11,7 +11,7 @@ namespace Catalog.API.Data
         {
             bool doesProductExist = productCollection.Find(pc => true).Any();
 
-            if (doesProductExist)
+            if (!doesProductExist)
             {
                 productCollection.InsertManyAsync(GetPreconfiguredProducts());
             }
